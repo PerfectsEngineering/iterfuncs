@@ -1,0 +1,18 @@
+projects:
+- id: bigquery-project
+  datasets:
+    - id: dataset1
+      tables:
+        - id: table_a
+          columns:
+            - name: id
+              type: INTEGER
+              mode: REQUIRED
+            - name: name
+              type: STRING
+              mode: required
+          data:
+            - id: 1
+              name: alice
+            - id: 2
+              name: bob
