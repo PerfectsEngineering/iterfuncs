@@ -49,18 +49,13 @@ func main() {
 }
 
 func fetchDataFromBigQuery(ctx context.Context, client *bigquery.Client) ([]string, error) {
-	query := client.Query("SELECT * FROM dataset1.table_a")
-
-	// Run the query and get the results
-	iter, err := query.Read(ctx)
-	if err != nil {
-		return nil, fmt.Errorf("failed to execute query: %v", err)
-	}
-
 	var results []string
 
 	// Iterate over the results and append them to the array
-	for row, err := range iterfuncs.BqRange[Row](iter) {
+	for row, err := range iterfuncs.BqQueryRange[Row](
+		ctx,
+		client.Query("SELECT * FROM dataset1.table_a"),
+	) {
 		if err != nil {
 			return nil, fmt.Errorf("failed to retrieve row: %v", err)
 		}
