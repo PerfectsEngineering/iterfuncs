@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"path"
 
 	"github.com/perfectsengineering/iterfuncs"
@@ -24,7 +24,7 @@ func main() {
 			log.Fatal().Err(err).Send()
 		}
 
-		result, err := ioutil.ReadAll(file)
+		result, err := io.ReadAll(file)
 		if err != nil {
 			log.Fatal().Err(err).Send()
 		}
