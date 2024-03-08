@@ -3,7 +3,7 @@
 This library showcases some of the ways the new experimental rangefunc, can be used in Go projects.
 
 There is an accompany blog post about that talks about the patterns used in this library. 
-Read it at https://blog.perfects.engineering
+Read it at https://blog.perfects.engineering/go_range_over_funcs
 
 ## Examples
 
